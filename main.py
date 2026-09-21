@@ -366,7 +366,7 @@ app.add_middleware(
 # ============================================
 # Routes — Auth
 # ============================================
-@app.post("/api/auth/register")
+@app.post("/auth/register")
 async def register(data: RegisterIn):
     conn = get_conn()
     try:
@@ -390,7 +390,7 @@ async def register(data: RegisterIn):
         conn.close()
 
 
-@app.post("/api/auth/login")
+@app.post("/auth/login")
 async def login(data: LoginIn):
     conn = get_conn()
     row = conn.execute(
