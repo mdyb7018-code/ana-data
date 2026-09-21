@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: anadata
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: API_ID
+        value: "36041141"
+      - key: API_HASH
+        value: "192dd9c6f9a766c7880bc74a59d53d2d"
+      - key: ADMIN_PHONE
+        value: "+201143645282"
+      - key: ADMIN_EMAIL
+        value: "mdyb7018@gmail.com"
+      - key: ADMIN_PASSWORD
+        value: "admin123456"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: "8000"
+      - key: DATA_DIR
+        value: "/app/data"
+    disk:
+      name: anadata-data
+      mountPath: /app/data
+      sizeGB: 1
